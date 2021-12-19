@@ -1,23 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kjonker <kjonker@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/14 15:52:07 by kjonker           #+#    #+#             */
+/*   Updated: 2021/12/17 19:24:02 by kjonker          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // Losse strings tellen tussen de delimiter in de meegegeven source string
+
 int	count_words(char *str, char c)
 {
 	int	i;
-	int	k;
+	int	words;
 
 	i = 0;
-	k = 0;
+	words = 0;
 	while (str[i])
 	{
-		while (str[i] == c && str[i])
-			i++;
-		while (str[i] != c && str[i])
-			i++;
-		if (str[i])
-			k++;
+		if ((str[i + 1] == c || str[i + 1] == '\0' == 1)
+			&& (str[i] == c || str[i] == '\0') == 0)
+			words++;
+		i++;
 	}
-	return (k);
+	return (words);
 }
 
 // Telt de losse characters in de losse string
@@ -29,16 +40,10 @@ char	*make_word(char *str, char c)
 	i = 0;
 	while (str[i] && str[i] != c)
 		i++;
-	s = ft_calloc((i), sizeof(char));
+	s = ft_calloc((i + 1), sizeof(char));
 	s = ft_memcpy(s, str, i);
 	return (s);
 }
-
-// Ruimte vrijmaken als iets fout gaat
-// char	check_free()
-// {
-
-// }
 
 // Hoofdfunctie
 char	**ft_split(char const *s, char c)
@@ -49,7 +54,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	arr = malloc((sizeof(char *)) * (count_words((char *)s, c) + 1));
+	arr = ft_calloc(count_words((char *)s, c) + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
 	while (s[i])
@@ -67,22 +72,43 @@ char	**ft_split(char const *s, char c)
 	arr[k] = NULL;
 	return (arr);
 }
-
 /*
 int	main(void)
 {
-	char	str[] = "      split       this for   me  !";
+	char	str[] = "  1     2 3     4 5    6 7   8 9    10 11 12 13 14     ";
 	char	ch = ' ';
 	char	**out;
 	int 	i = 0;
 
 	out = ft_split(str, ch);
-
 	while (out[i])
 	{
 		printf("%s\n", out[i]);
 		i++;
 	}
-	return(0);
+	return (0);
+}
+*/
+
+/*
+int	main(void)
+{
+	int	x;
+
+	x = count_words("A  A", 32);
+	printf("%i\n", x);
+		x = count_words("  A  A", 32);
+	printf("%i\n", x);
+		x = count_words(" A  A   ", 32);
+	printf("%i\n", x);
+		x = count_words("   A  A  A A", 32);
+	printf("%i\n", x);
+		x = count_words("A  A A", 32);
+	printf("%i\n", x);
+		x = count_words("A  Aaa A", 32);
+	printf("%i\n", x);
+		x = count_words("A  A A A ", 32);
+	printf("%i\n", x);
+	return (0);
 }
 */
