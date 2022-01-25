@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strncmp.c                                       :+:    :+:            */
+/*   ft_lstadd_front_bonus.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kjonker <kjonker@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/12/14 15:53:28 by kjonker       #+#    #+#                 */
-/*   Updated: 2022/01/25 15:28:51 by kjonker       ########   odam.nl         */
+/*   Created: 2022/01/18 17:06:14 by kjonker       #+#    #+#                 */
+/*   Updated: 2022/01/18 17:53:01 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	while (n > 0 && *s1)
-	{
-		if (*s1 != *s2)
-			return (*(unsigned char *) s1 - *(unsigned char *) s2);
-		s1++;
-		s2++;
-		n--;
-	}
-	if (n > 0 && *s1 != *s2)
-		return (*(unsigned char *) s1 - *(unsigned char *) s2);
-	return (0);
+	new->next = *lst;
+	*lst = new;
 }

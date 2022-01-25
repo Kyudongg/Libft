@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kjonker <kjonker@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:54:09 by kjonker           #+#    #+#             */
-/*   Updated: 2021/12/16 16:56:51 by kjonker          ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_substr.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kjonker <kjonker@student.42.fr>              +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/14 15:54:09 by kjonker       #+#    #+#                 */
+/*   Updated: 2022/01/25 15:29:31 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
-/*
-int	main(void)
-{
-	char const str1[] = "tripouille";
-	char	*str2 = ft_substr(str1, 42, 100);
-
-	printf("%s\n%s\n", str1, str2);
-	free(str2);
-}
-*/

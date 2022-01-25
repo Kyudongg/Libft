@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kjonker <kjonker@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:51:46 by kjonker           #+#    #+#             */
-/*   Updated: 2021/12/14 15:51:49 by kjonker          ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_putnbr_fd.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kjonker <kjonker@student.42.fr>              +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/14 15:51:46 by kjonker       #+#    #+#                 */
+/*   Updated: 2022/01/25 15:28:13 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(i / 10, fd);
 	ft_putchar_fd(i % 10 + '0', fd);
 }
-
-/*
-int	main(void)
-{
-	int	number;
-
-	number = 1234;
-	ft_putnbr_fd(number, 1);
-}
-*/

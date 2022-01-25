@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kjonker <kjonker@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:52:07 by kjonker           #+#    #+#             */
-/*   Updated: 2021/12/17 19:24:02 by kjonker          ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_split.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kjonker <kjonker@student.42.fr>              +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/14 15:52:07 by kjonker       #+#    #+#                 */
+/*   Updated: 2022/01/25 15:28:24 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,43 +72,3 @@ char	**ft_split(char const *s, char c)
 	arr[k] = NULL;
 	return (arr);
 }
-/*
-int	main(void)
-{
-	char	str[] = "  1     2 3     4 5    6 7   8 9    10 11 12 13 14     ";
-	char	ch = ' ';
-	char	**out;
-	int 	i = 0;
-
-	out = ft_split(str, ch);
-	while (out[i])
-	{
-		printf("%s\n", out[i]);
-		i++;
-	}
-	return (0);
-}
-*/
-
-/*
-int	main(void)
-{
-	int	x;
-
-	x = count_words("A  A", 32);
-	printf("%i\n", x);
-		x = count_words("  A  A", 32);
-	printf("%i\n", x);
-		x = count_words(" A  A   ", 32);
-	printf("%i\n", x);
-		x = count_words("   A  A  A A", 32);
-	printf("%i\n", x);
-		x = count_words("A  A A", 32);
-	printf("%i\n", x);
-		x = count_words("A  Aaa A", 32);
-	printf("%i\n", x);
-		x = count_words("A  A A A ", 32);
-	printf("%i\n", x);
-	return (0);
-}
-*/

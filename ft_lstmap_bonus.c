@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strncmp.c                                       :+:    :+:            */
+/*   ft_lstmap_bonus.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kjonker <kjonker@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/12/14 15:53:28 by kjonker       #+#    #+#                 */
-/*   Updated: 2022/01/25 15:28:51 by kjonker       ########   odam.nl         */
+/*   Created: 2022/01/25 10:31:31 by kjonker       #+#    #+#                 */
+/*   Updated: 2022/01/25 15:24:08 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	while (n > 0 && *s1)
+	t_list	*temp;
+	t_list	*listmap;
+
+	if (!lst)
+		return (NULL);
+	listmap = NULL;
+	while (lst != NULL)
 	{
-		if (*s1 != *s2)
-			return (*(unsigned char *) s1 - *(unsigned char *) s2);
-		s1++;
-		s2++;
-		n--;
+		temp = ft_lstnew_bonus((*f)(lst->content));
+		if (temp == NULL)
+			ft_lstclear_bonus(&listmap, (*del));
+		else
+			ft_lstadd_back_bonus(&listmap, temp);
+		lst = lst->next;
 	}
-	if (n > 0 && *s1 != *s2)
-		return (*(unsigned char *) s1 - *(unsigned char *) s2);
-	return (0);
+	return (listmap);
 }

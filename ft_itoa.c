@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kjonker <kjonker@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 15:49:24 by kjonker           #+#    #+#             */
-/*   Updated: 2021/12/17 19:17:25 by kjonker          ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_itoa.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kjonker <kjonker@student.42.fr>              +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/14 15:49:24 by kjonker       #+#    #+#                 */
+/*   Updated: 2022/01/25 15:27:45 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,3 @@ char	*ft_itoa(int n)
 	res = non_recursive_mode(number, res, count);
 	return (res);
 }
-
-///*
-int	main(void)
-{
-	printf("%s\n", ft_itoa(12363744));
-	return (0);
-}
-//*/
-	// count how many number inside the number
-	//identify if the number is negative or not
-	// min int and -0 (edgecases)
-	// recursive (module)

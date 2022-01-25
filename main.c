@@ -220,5 +220,58 @@ int main(void)
 	printf("\n");
 	printf("%c", toupper(c));
 
+
+	printf("%s\n", ft_itoa(12363744));
+	return (0);
+
+
+	// count how many number inside the number
+	//identify if the number is negative or not
+	// min int and -0 (edgecases)
+	// recursive (module)
+
+
+
+{
+	char	str[] = "  1     2 3     4 5    6 7   8 9    10 11 12 13 14     ";
+	char	ch = ' ';
+	char	**out;
+	int 	i = 0;
+
+	out = ft_split(str, ch);
+	while (out[i])
+	{
+		printf("%s\n", out[i]);
+		i++;
+	}
+	return (0);
+}
+
+	int	x;
+
+	x = count_words("A  A", 32);
+	printf("%i\n", x);
+		x = count_words("  A  A", 32);
+	printf("%i\n", x);
+		x = count_words(" A  A   ", 32);
+	printf("%i\n", x);
+		x = count_words("   A  A  A A", 32);
+	printf("%i\n", x);
+		x = count_words("A  A A", 32);
+	printf("%i\n", x);
+		x = count_words("A  Aaa A", 32);
+	printf("%i\n", x);
+		x = count_words("A  A A A ", 32);
+	printf("%i\n", x);
+	return (0);
+
+
+
+	char const str1[] = "tripouille";
+	char	*str2 = ft_substr(str1, 42, 100);
+
+	printf("%s\n%s\n", str1, str2);
+	free(str2);
+
    return (0);
 }
