@@ -6,7 +6,7 @@
 /*   By: kjonker <kjonker@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/24 13:02:57 by kjonker       #+#    #+#                 */
-/*   Updated: 2022/01/25 15:23:52 by kjonker       ########   odam.nl         */
+/*   Updated: 2022/01/31 16:25:30 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (*lst != NULL)
 	{
 		temp = (*lst)->next;
-		ft_lstdelone_bonus(*lst, del);
+		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
 }

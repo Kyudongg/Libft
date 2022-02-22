@@ -6,7 +6,7 @@
 /*   By: kjonker <kjonker@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/19 17:19:11 by kjonker       #+#    #+#                 */
-/*   Updated: 2022/01/25 15:23:46 by kjonker       ########   odam.nl         */
+/*   Updated: 2022/01/31 16:25:27 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 	else
 	{
-		lastblock = ft_lstlast_bonus (*lst);
+		lastblock = ft_lstlast (*lst);
 		lastblock->next = new;
 	}
 }

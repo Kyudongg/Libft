@@ -6,7 +6,7 @@
 /*   By: kjonker <kjonker@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/24 14:43:51 by kjonker       #+#    #+#                 */
-/*   Updated: 2022/01/25 14:45:46 by kjonker       ########   odam.nl         */
+/*   Updated: 2022/02/01 14:35:31 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	//t_list	*temp;
-
 	if (!lst)
 		return ;
 	while (lst != NULL)

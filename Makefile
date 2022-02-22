@@ -3,6 +3,7 @@ CC 			= 	gcc
 CFLAGS 		= 	-Wall -Werror -Wextra -c
 AR 			= 	ar rcs
 OBJ			= 	$(SOURCEFILES:%.c=%.o)
+OBJBONUS	=	$(SOURCEFILESBONUS:%.c=%.o)
 SOURCEFILES = 	ft_atoi.c\
 				ft_bzero.c\
 				ft_calloc.c\
@@ -12,15 +13,6 @@ SOURCEFILES = 	ft_atoi.c\
 				ft_isdigit.c\
 				ft_isprint.c\
 				ft_itoa.c\
-				ft_lstadd_back_bonus.c\
-				ft_lstadd_front_bonus.c\
-				ft_lstclear_bonus.c\
-				ft_lstdelone_bonus.c\
-				ft_lstiter_bonus.c\
-				ft_lstlast_bonus.c\
-				ft_lstmap_bonus.c\
-				ft_lstnew_bonus.c\
-				ft_lstsize_bonus.c\
 				ft_memchr.c\
 				ft_memcmp.c\
 				ft_memcpy.c\
@@ -46,6 +38,16 @@ SOURCEFILES = 	ft_atoi.c\
 				ft_substr.c\
 				ft_tolower.c\
 				ft_toupper.c\
+
+SOURCEFILESBONUS = 	ft_lstadd_back_bonus.c\
+					ft_lstadd_front_bonus.c\
+					ft_lstclear_bonus.c\
+					ft_lstdelone_bonus.c\
+					ft_lstiter_bonus.c\
+					ft_lstlast_bonus.c\
+					ft_lstmap_bonus.c\
+					ft_lstnew_bonus.c\
+					ft_lstsize_bonus.c\
 				
 				
 all: $(NAME)
@@ -56,8 +58,13 @@ $(NAME): $(OBJ)
 $(OBJ): $(SOURCEFILES)
 	$(CC) $(CFLAGS) $(SOURCEFILES)
 
+$(OBJBONUS): $(SOURCEFILESBONUS)
+	$(CC) $(CFLAGS) $(SOURCEFILESBONUS)
+
+bonus: $(NAME) $(NAME) $(OBJBONUS)
+
 clean: 
-	/bin/rm -f $(OBJ)
+	/bin/rm -f $(OBJ) $(OBJBONUS)
 
 fclean: clean
 	/bin/rm -f $(NAME)

@@ -6,25 +6,21 @@
 /*   By: kjonker <kjonker@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/18 15:55:58 by kjonker       #+#    #+#                 */
-/*   Updated: 2022/01/25 10:30:51 by kjonker       ########   odam.nl         */
+/*   Updated: 2022/02/01 14:57:14 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
-# include <ctype.h>
 # include <unistd.h>
-# include <stddef.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list;
+}					t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

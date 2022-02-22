@@ -6,7 +6,7 @@
 /*   By: kjonker <kjonker@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/14 15:49:24 by kjonker       #+#    #+#                 */
-/*   Updated: 2022/01/25 15:27:45 by kjonker       ########   odam.nl         */
+/*   Updated: 2022/02/01 15:40:52 by kjonker       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	count_arr(int n)
 	return (number);
 }
 
-static char	*non_recursive_mode(long n, char *str, int count)
+static char	*make_number(long n, char *str, int count)
 {
 	while (n > 0)
 	{
@@ -59,6 +59,6 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		number *= -1;
 	}
-	res = non_recursive_mode(number, res, count);
+	res = make_number(number, res, count);
 	return (res);
 }
